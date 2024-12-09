@@ -1,0 +1,61 @@
+.alphabet-learn {
+  text-align: center;
+  margin-top: 5rem auto;
+  font-family: Arial, sans-serif;
+}
+
+.letter-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.letter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emoji img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.letter {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+}
+
+.word {
+  font-size: 24px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.hindi-word {
+  font-size: 20px;
+  color: #00796b;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

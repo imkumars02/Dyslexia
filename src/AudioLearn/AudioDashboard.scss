@@ -1,0 +1,94 @@
+.audio-dashboard {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 5rem 0rem;
+
+  .dashboard-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    text-align: center;
+    margin: 2rem 0rem;
+    .card-title{
+      font-weight: 500;
+      font-size: 2rem;
+      font-family: 'Barlow','san-serif';
+    }
+  }
+
+  .button-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-family: 'Barlow','san-serif';
+      font-weight: 500;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+
+      &.active {
+        background-color: #0056b3;
+        font-weight: bold;
+      }
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .card-content {
+    margin-top: 20px;
+
+    .theory {
+      margin-bottom: 20px;
+
+      .theory-text {
+        h3 {
+          margin: 0;
+          font-size: 20px;
+        }
+
+        p {
+          margin: 5px 0;
+        }
+      }
+
+      .button-container {
+        margin-top: 10px;
+
+        .toggle-button {
+          background-color: #28a745;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 15px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          &.playing {
+            background-color: #dc3545;
+          }
+
+          .button-icon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

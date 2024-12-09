@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+$primary-color: #3402fa;
+$secondary-color: #ffd700;
+$text-color: #333;
+$light-text-color: #f0f0f0;
+$overlay-bg: rgba(37, 25, 25, 0.6);
+
+@mixin section-background($image) {
+  background-image: url($image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.dashboard-container {
+  font-family: "Poppins", sans-serif;
+  color: $text-color;
+  line-height: 1.6;
+  margin-top: 4rem;
+  background-color: transparent; // Ensure the container has no background
+}
+
+section {
+  padding: 8rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: center;
+  background-color: transparent; // Explicitly set section background as transparent
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  // margin-bottom: 1rem;
+  color: $text-color;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 100px;
+    height: 4px;
+    background-color: $primary-color;
+    transform: translateX(-50%);
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include section-background("../Image/mainbg.jpeg");
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba($primary-color, 0.7),
+      rgba($secondary-color, 0.7)
+    );
+    opacity: 0.8;
+  }
+
+  .overlay-content {
+    background-color: rgba($overlay-bg, 0.8);
+    padding: 4rem;
+    border-radius: 30px;
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    animation: scaleIn 1s ease-out;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: $light-text-color;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: $light-text-color;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 0.5s forwards;
+    }
+  }
+
+  .scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: $light-text-color;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.cta-button {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &.start {
+    background-color: $primary-color;
+    color: $light-text-color;
+  }
+
+  &.play {
+    background-color: $light-text-color;
+    color: $primary-color;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.features-section {
+  @include section-background("../Image/feature.png");
+}
+
+.games-section {
+  @include section-background("../Image/games.jpg");
+}
+
+.education-section {
+  @include section-background("../Image/feature.png");
+}
+
+.audio-section {
+  @include section-background("../Image/audio.jpg");
+}
+
+.about-section {
+  @include section-background("../Image/about.jpg");
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    .overlay-content {
+      padding: 3rem 2rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  section {
+    padding: 6rem 1.5rem;
+  }
+}

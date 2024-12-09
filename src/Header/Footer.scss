@@ -1,0 +1,32 @@
+.Footer {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(18, 18, 29);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding:2rem;
+  .Btn{
+    display: flex;
+    gap: 2rem;
+    a{
+        background-color: #397eff;
+        color: #fff;
+        padding: 1rem;
+        border-radius: .5rem;
+        cursor: pointer;
+        letter-spacing: .1rem;
+    }
+    a:hover{
+        background-color: #ccff5f;
+        color: #000;
+    }
+  }
+}

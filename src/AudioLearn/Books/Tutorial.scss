@@ -1,0 +1,123 @@
+.TutorialContainer {
+  width: 100%;
+  height: 100%;
+  padding: 4rem;
+
+  .TC {
+    width: 100%;
+    height: auto;
+
+    .Heading {
+      font-family: "Barlow", "sans-serif";
+      font-size: 2rem;
+      font-weight: 500;
+    //   background-color: #b082ff;
+    //   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    //   border-radius: 0.5rem;
+      color: #000000;
+    //   text-align: center;
+    //   padding: 0.3rem;
+    }
+
+    .Container {
+      width: 100%;
+      height: 50rem; 
+      display: flex;
+      margin-top: 2rem;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: white;
+      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+      .VideoText {
+        width: 70%;
+        height: auto;
+
+        .Video {
+          height: 35rem;
+          width: 100%;
+          video {
+            width: 100%;
+            height: 100%;
+          }
+          h3{
+            margin: 1rem 0rem;
+          }
+        }
+
+        .Text {
+          width: 100%;
+          height: auto;
+          margin-top: 3rem;
+
+          .Description {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #333;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+          }
+
+          .ButtonContainer {
+            display: flex;
+            gap: 1rem;
+
+            button {
+              padding: 0.5rem 1rem;
+              cursor: pointer;
+              background-color: #007bff;
+              color: white;
+              border: none;
+              border-radius: 0.25rem;
+
+              &:disabled {
+                background-color: gray;
+              }
+            }
+          }
+        }
+      }
+
+      .List {
+        width: 30%;
+        height: 100%;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        position: relative;
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+              background-color: #f0f0f0;
+            }
+
+            &.active {
+              background-color: #007bff;
+              color: white;
+            }
+          }
+        }
+      }
+      .List::-webkit-scrollbar{
+        display: none;
+      }
+    }
+  }
+}

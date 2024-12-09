@@ -1,0 +1,63 @@
+.games-dashboard {
+  font-family: "Arial", sans-serif;
+  padding: 1.25rem;
+  text-align: center;
+  background: url("../Image/quizBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5rem;
+
+  h1 {
+    color: #333;
+    margin-bottom: 1.875rem;
+    font-family: "Barlow", "san-serif";
+    font-weight: 500;
+    background: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+  }
+
+  .buttons {
+    margin-top: 2rem;
+    // margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-family: "Barlow", "san-serif";
+      font-weight: 500;
+      border-radius: 0.5rem;
+      padding: 1rem 1.57rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+
+      &:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+
+      &.active {
+        background-color: #b30000;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .section-content {
+    // background: #fff;
+    border-radius: 0.7rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+    transition: transform 0.2s;
+  }
+}
